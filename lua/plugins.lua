@@ -33,6 +33,14 @@ use {
   commit = commit.telescope,
   requires = { {'nvim-lua/plenary.nvim'} }
 }
+use {
+  'neovim/nvim-lspconfig',
+  config = function()
+    require'lspconfig'.gopls.setup{}
+    require'lspconfig'.eslint.setup{}
+  end,
+  
+}
 --
 -- Put this at the end after all plugins
 if packer_bootstrap then
